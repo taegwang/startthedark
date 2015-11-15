@@ -48,6 +48,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'startthedark.urls'
+#ROOT_URLCONF = 'urls'
 
 WSGI_APPLICATION = 'startthedark.wsgi.application'
 
