@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+print BASE_DIR
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
@@ -21,7 +23,6 @@ SECRET_KEY = 'b36s86$&^yw6vw_x7pkgi=u(@j7fsv!+!uv(bll9q*$%sq&c=c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -66,6 +67,23 @@ DATABASES = {
 TEMPLATE_DIRS = (
 	os.path.join(BASE_DIR, 'templates'),
 )
+TEMPLATES = [ 
+     { 
+         'BACKEND': 'django.template.backends.django.DjangoTemplates', 
+         'DIRS': os.path.join(BASE_DIR, 'templates/'),
+         'APP_DIRS': True, 
+         'OPTIONS': { 
+             'context_processors': [ 
+                 'django.template.context_processors.debug', 
+                 'django.template.context_processors.request', 
+                 'django.contrib.auth.context_processors.auth', 
+                 'django.contrib.messages.context_processors.messages', 
+             ], 
+         }, 
+     }, 
+] 
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
