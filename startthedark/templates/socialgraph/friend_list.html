@@ -1,4 +1,4 @@
-{% extends "base.html "%}
+i{% extends "base.html"%}
 
 {% block title %}Friend List - {{ block.super }}{% endblock%}
 
@@ -18,7 +18,7 @@
 	{% else %}
 		<ul>
 		{% for friend in friends %}
-			<li>{{ friend.username }}</li>
+			<u>{{ friend.username }}</u>
 		{% endfor %}
 		</ul>
 	{% endifequal%}

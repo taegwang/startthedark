@@ -1,5 +1,5 @@
 """
-Django settings for startthedark project.
+Django settings for blog project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -12,17 +12,17 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-print BASE_DIR
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'b36s86$&^yw6vw_x7pkgi=u(@j7fsv!+!uv(bll9q*$%sq&c=c'
+SECRET_KEY = 'ysi4!@-isc1fuo=vfu$l^wldby#)6%)+huhuc#@3dev07(s(j5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -35,9 +35,8 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'helloworld',
     'django.contrib.staticfiles',
-    'events',
-    'socialgraph',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -49,10 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'startthedark.urls'
-#ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'blog.urls'
 
-WSGI_APPLICATION = 'startthedark.wsgi.application'
+WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
@@ -64,25 +62,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-
-TEMPLATES = [ 
-     { 
-         'BACKEND': 'django.template.backends.django.DjangoTemplates', 
-         'DIRS': [os.path.join(BASE_DIR, 'templates/'),],
-         'APP_DIRS': True, 
-         'OPTIONS': { 
-             'context_processors': [ 
-                 'django.template.context_processors.debug', 
-                 'django.template.context_processors.request', 
-                 'django.contrib.auth.context_processors.auth', 
-                 'django.contrib.messages.context_processors.messages', 
-             ], 
-         }, 
-     }, 
-] 
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -102,3 +81,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+	'./templates',
+)

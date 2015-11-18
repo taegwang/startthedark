@@ -1,8 +1,7 @@
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render, render_to_response, get_object_or_404
 from django.http import Http404, HttpResponseRedirect
 from django.contrib.auth.models import User
-from socialgraph.util import get_people_user_follows, get_people_following_user
-from socialgraph.util import get_mutual_followers
+from socialgraph.util import *
 from socialgraph.models import UserLink
 from django.template import RequestContext
 
@@ -22,7 +21,7 @@ def friend_list(request, list_type, username):
 	}
 
 	return render_to_response(
-		'socialgraph/friend_list.html',
+		'socialgraph/friend_list.html',		
 		context,
 		context_instance = RequestContext(request),
-	)
+		)
